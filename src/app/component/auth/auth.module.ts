@@ -3,6 +3,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NgModule } from '@angular/core';
 import { AuthRoutingModule } from './auth-Routing.module';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     ],
     imports: [
         RouterModule,
-        AuthRoutingModule        
+        AuthRoutingModule,
+        ReactiveFormsModule  
         
       ],
       
