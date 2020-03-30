@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AuthRoutingModule } from './auth-Routing.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+
 
 
 
@@ -16,8 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     imports: [
         RouterModule,
         AuthRoutingModule,
-        ReactiveFormsModule  
-        
+        ReactiveFormsModule,
+        CommonModule,  
+      
       ],
       
 })
