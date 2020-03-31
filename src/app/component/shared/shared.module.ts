@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -6,8 +6,9 @@ import { HeaderComponent } from './header/header.component';
 declarations: [
     HeaderComponent,
     FooterComponent
-]
-
+],
+ exports:[HeaderComponent,
+    FooterComponent]
 })
 export class SharedComponent{
     

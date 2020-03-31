@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,15 +8,17 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-login:any=[]
+  login:FormGroup;
   constructor(private user: UserService) { }
 
   ngOnInit(): void {
+this.login = new FormGroup({
+  
+})
+
   }
 
   onLogin(){
-    this.user.onSignUp().subscribe(post=> {this.login=post;
-      console.log(post)
-    })
+   
   }
 }

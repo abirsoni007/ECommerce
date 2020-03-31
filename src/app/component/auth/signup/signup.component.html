@@ -3,25 +3,49 @@
         <form [formGroup]="signup" (ngSubmit)="onSubmit()">
             <div class="col-xs-6">
                 <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" name="name" formControlName="name">
-                    <span *ngIf="!signup.get('name').valid && signup.get('name').touched" class="help-block">This filed is requerd</span>
+                    <label>First Name</label>
+                    <input type="text" class="form-control" name="fname" formControlName="fname">
+                    <span *ngIf="!signup.get('fname').valid && signup.get('fname').touched" class="help-block">This filed is requerd</span>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="lname" formControlName="lname">
+                    <span *ngIf="!signup.get('lname').valid && signup.get('lname').touched" class="help-block">This filed is requerd</span>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
                     <input type="email" class="form-control" formControlName="email" name="email">
-                    <span *ngIf="!signup.get('email').valid && signup.get('name').touched">Enter a vaild email</span>
+                    <span *ngIf="!signup.get('email').valid && signup.get('email').touched">Enter a vaild email</span>
+                </div>
+               
+                <div class="form-group">
+                    <label>Ragister Documnet</label>
+                    <input type="file" class="form-control" name="file" formControlName="file">
+                    <span *ngIf="!signup.get('file').valid && signup.get('file').touched">please attach a file</span>
+                </div>
+                <div class="form-group">
+                    <label>Ern number</label>
+                    <input type="number" class="form-control" name="enum" formControlName="enum">
+                   
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="password" formControlName="password">
+                    <input type="password" class="form-control" name="password" formControlName="password" >
                     <span *ngIf="!signup.get('password').valid && signup.get('password').touched">Enter a password</span>
                 </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="Cpassword" formControlName="confirmedPassword" >
+                    <span *ngIf="!signup.get('confirmedPassword').valid && signup.get('confirmedPassword').touched"></span> 
+                         
+                        <span *ngIf="!signup.controls.confirmedPassword.valid">password mismatch</span>
+                </div>
                 <br>
-                <button class="btn btn-primary" type="submit">Sign-Up
+                <button class="btn btn-primary" type="submit" (click)='onSubmit()'>Sign-Up
                 </button>
                 <br>
                 <a href="http://localhost:4200/login">already have a Account?</a>
+                
 
 
             </div>

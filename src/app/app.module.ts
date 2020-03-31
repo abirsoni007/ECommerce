@@ -1,21 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './component/shared/header/header.component';
-import { FooterComponent } from './component/shared/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './service/user.service';
+import { SharedComponent } from './component/shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule ,
+    SharedComponent  
   ],
-  providers: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
