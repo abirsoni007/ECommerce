@@ -10,17 +10,18 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
 
 
-onSignUp(user){
- return this.http.post('http://139.59.55.24/api/v1/users/sign_up', user )
-  
- 
+  onSignUp(user) {
+    return this.http.post('http://139.59.55.24/api/v1/users/sign_up', user)
+
+
+  }
+
+
+  onLogin(user: { email: any, password: any, remember_me: boolean, ern_number: any }) {
+    return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`, user)
+  }
 }
-
-
-onLogin(email, password){
-  return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`,{email , password})
-}}

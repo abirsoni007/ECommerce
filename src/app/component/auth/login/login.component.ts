@@ -11,52 +11,44 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   login: FormGroup;
-    loading = false;
-    submitted = false;
-    returnUrl: string;
-    error: string;
-file;
-    constructor(
-        private formBuilder: FormBuilder,
-        private userService: UserService, 
-        private router: Router
-    ) {
-        
-    }
 
-    ngOnInit() {
-        this.login = this.formBuilder.group({
-            email: ['', Validators.required],
-            password: ['', Validators.required]
+  submitted = false;
+  error: string;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {
+
+  }
+
+  ngOnInit() {
+    this.login = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      remember_me: [false],
+      ern_number: ('')
+
+    });
+  }
+
+  onSubmit(user: { email: any, password: any, remember_me: boolean, ern_number: any }) {
+
+    if (this.login.invalid) {
+      return;
+    }
+    this.userService.onLogin(user)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate(['deshboard']);
+        },
+        error => {
+          debugger
+          this.error = error;
+          console.log(this.error)
+
         });
-
-        // get return url from route parameters or default to '/'
-        
-    }
-
-    // convenience getter for easy access to form fields
-    get f() { return this.login.controls; }
-
-    onSubmit() {
-      this.submitted = true;
-
-      // stop here if form is invalid
-      if (this.login.invalid) {
-          return;
-      }
-
-      this.loading = true;
-      this.userService.onLogin(this.f.email.value, this.f.password.value)
-          .pipe(first())
-          .subscribe(
-              data => {
-                  this.router.navigate(['deshboard']);
-              },
-              error => {
-                debugger
-                  this.error = error;
-                  console.log(this.error)
-                  
-              });
   }
 }

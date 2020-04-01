@@ -4,16 +4,16 @@ import { UserService } from './user.service';
 
 
 @NgModule({
-    declarations:[
-        
-        
-    ],
-    imports: [
-        HttpClientModule
-      ],
-      providers:[UserService]
+  declarations: [
+
+
+  ],
+  imports: [
+    HttpClientModule
+  ],
+  providers: [UserService]
 })
 
-export class ServiceModule{
+export class ServiceModule {
 
 }
