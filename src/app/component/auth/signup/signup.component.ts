@@ -3,7 +3,6 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { passwordValidation } from './passwordValidator';
 import { UserService } from 'src/app/service/user.service';
 import { first } from 'rxjs/operators';
-
 import { Router } from '@angular/router';
 
 
@@ -22,15 +21,15 @@ loading=false;
   
     this.signup = new FormGroup({
       
-      fname: new FormControl(null, Validators.required),
-      lname: new FormControl(null, Validators.required),
+      first_name: new FormControl(null, Validators.required),
+      last_name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      file: new FormControl(null),
-      enum: new FormControl(null),
+      document: new FormControl(null),
+      ern_number: new FormControl(null),
       password: new FormControl(null),
-      confirmedPassword: new FormControl(null, passwordValidation)
+      password_confirmation: new FormControl(null, passwordValidation)
     })
-    console.log(this.signup)
+    
   }
   
 

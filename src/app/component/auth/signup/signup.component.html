@@ -4,13 +4,13 @@
             <div class="col-xs-6">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" class="form-control" name="fname" formControlName="fname">
-                    <span *ngIf="!signup.get('fname').valid && signup.get('fname').touched" class="help-block">This filed is requerd</span>
+                    <input type="text" class="form-control" name="first_name" formControlName="first_name">
+                    <span *ngIf="!signup.get('first_name').valid && signup.get('first_name').touched" class="help-block">This filed is requerd</span>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" class="form-control" name="lname" formControlName="lname">
-                    <span *ngIf="!signup.get('lname').valid && signup.get('lname').touched" class="help-block">This filed is requerd</span>
+                    <input type="text" class="form-control" name="last_name" formControlName="last_name">
+                    <span *ngIf="!signup.get('last_name').valid && signup.get('last_name').touched" class="help-block">This filed is requerd</span>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
@@ -20,12 +20,12 @@
                
                 <div class="form-group">
                     <label>Ragister Documnet</label>
-                    <input type="file" class="form-control" name="file" formControlName="file">
-                    <span *ngIf="!signup.get('file').valid && signup.get('file').touched">please attach a file</span>
+                    <input type="file" class="form-control" name="document" formControlName="document">
+                    <span *ngIf="!signup.get('document').valid && signup.get('document').touched">please attach a file</span>
                 </div>
                 <div class="form-group">
                     <label>Ern number</label>
-                    <input type="number" class="form-control" name="enum" formControlName="enum">
+                    <input type="number" class="form-control" name="ern_number" formControlName="ern_number">
                    
                 </div>
                 <div class="form-group">
@@ -35,8 +35,8 @@
                 </div>
                 <div class="form-group">
                     <label>Confirm Password</label>
-                    <input type="password" class="form-control" name="Cpassword" formControlName="confirmedPassword" >
-                    <span *ngIf="!signup.get('confirmedPassword').valid && signup.get('confirmedPassword').touched"></span> 
+                    <input type="password" class="form-control" name="password_confirmation" formControlName="password_confirmation" >
+                    <span *ngIf="!signup.get('password_confirmation').valid && signup.get('password_confirmation').touched"></span> 
                          
                         <span *ngIf="!signup.controls.confirmedPassword.valid">password mismatch</span>
                 </div>
