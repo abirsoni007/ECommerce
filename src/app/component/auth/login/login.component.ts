@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { first, concatAll } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 file;
     constructor(
         private formBuilder: FormBuilder,
-        private userService: UserService
+        private userService: UserService, 
+        private router: Router
     ) {
         
     }
@@ -36,27 +38,25 @@ file;
     get f() { return this.login.controls; }
 
     onSubmit() {
-        this.submitted = true;
-        debugger
-        // stop here if form is invalid
-        if (this.login.invalid) {
-            return;
-        }
+      this.submitted = true;
 
-        debugger
-        this.userService.onLogin()
-        
-            .pipe(first())
-            .subscribe(
-                data => {
-                  this.file= data
-                  console.log(this.file)
-                  this.file.email.value== this.login.value;
-                    this.file.password.value== this.login.value;
-                },
-                error => {
-                    this.error = error;
-                   
-                });
-    }
+      // stop here if form is invalid
+      if (this.login.invalid) {
+          return;
+      }
+
+      this.loading = true;
+      this.userService.onLogin(this.f.email.value, this.f.password.value)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.router.navigate(['deshboard']);
+              },
+              error => {
+                debugger
+                  this.error = error;
+                  console.log(this.error)
+                  
+              });
+  }
 }

@@ -10,6 +10,6 @@ declarations: [
  exports:[HeaderComponent,
     FooterComponent]
 })
-export class SharedComponent{
+export class SharedModule{
     
 }

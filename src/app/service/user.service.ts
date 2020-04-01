@@ -21,7 +21,6 @@ onSignUp(user){
 }
 
 
-onLogin(){
-  return this.http.get('http://localhost:3000/api/v1/users/users/notification')
-}
-}
+onLogin(email, password){
+  return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`,{email , password})
+}}

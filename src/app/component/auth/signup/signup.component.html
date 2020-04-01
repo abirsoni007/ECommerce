@@ -38,7 +38,7 @@
                     <input type="password" class="form-control" name="password_confirmation" formControlName="password_confirmation" >
                     <span *ngIf="!signup.get('password_confirmation').valid && signup.get('password_confirmation').touched"></span> 
                          
-                        <span *ngIf="!signup.controls.confirmedPassword.valid">password mismatch</span>
+                        <span *ngIf="!signup.controls.password_confirmation.valid">password mismatch</span>
                 </div>
                 <br>
                 <button class="btn btn-primary" type="submit" (click)='onSubmit()'>Sign-Up

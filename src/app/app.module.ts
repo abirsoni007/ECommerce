@@ -4,18 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
-import { SharedComponent } from './component/shared/shared.module';
+import { SharedModule } from './component/shared/shared.module';
+import { DeshboardModule } from './Deshboard/deshboard/deshboard.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule ,
-    SharedComponent  
+    SharedModule,
+    DeshboardModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [UserService],
