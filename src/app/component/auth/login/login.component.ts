@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { first, concatAll } from 'rxjs/operators';
+import { FormGroup, FormControl, Validators, NgForm, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   error: string;
 
   constructor(
-    private formBuilder: FormBuilder,
+
     private userService: UserService,
     private router: Router
   ) {
@@ -24,16 +24,19 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.login = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      remember_me: [false],
-      ern_number: ('')
+    this.login = new FormGroup({
+      user: new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      ern_number: new FormControl(''),
+      password: new FormControl(null),
+      remember_me: new FormControl(false)
+      })});
 
-    });
   }
+  
 
-  onSubmit(user: { email: any, password: any, remember_me: boolean, ern_number: any }) {
+  onSubmit(user) {
+    console.log(this.login)
 
     if (this.login.invalid) {
       return;
@@ -45,7 +48,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['deshboard']);
         },
         error => {
-          debugger
+          
           this.error = error;
           console.log(this.error)
 

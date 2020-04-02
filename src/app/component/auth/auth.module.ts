@@ -3,7 +3,7 @@ import { SignupComponent } from './signup/signup.component';
 import { NgModule } from '@angular/core';
 import { AuthRoutingModule } from './auth-Routing.module';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
         AuthRoutingModule,
         ReactiveFormsModule,
         CommonModule,
+        FormsModule,
         HttpClientModule
       ],
       providers:[

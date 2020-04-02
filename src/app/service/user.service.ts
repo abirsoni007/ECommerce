@@ -21,7 +21,7 @@ export class UserService {
   }
 
 
-  onLogin(user: { email: any, password: any, remember_me: boolean, ern_number: any }) {
+  onLogin(user) {
     return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`, user)
   }
 }

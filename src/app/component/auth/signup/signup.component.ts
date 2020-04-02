@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
 
 
   onSubmit() {
-
+console.log(this.signup)
     this.userSer.onSignUp(this.signup.value).pipe(first()).subscribe(data => {
       console.log(data)
       this.router.navigate(['login'], { queryParams: { registered: true } });
