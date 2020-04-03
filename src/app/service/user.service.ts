@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 
 
@@ -23,5 +25,15 @@ export class UserService {
 
   onLogin(user) {
     return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`, user)
+  }
+
+  onList(){
+    return this.http.get<any[]>('http://139.59.55.24/api/v1/divisions',{
+      headers: new HttpHeaders({ 'header': 'get()' }),
+      params: new HttpParams().set('print', 'param')
+  })
+  }
+  onUpdateDivision(user){
+    return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', user)
   }
 }

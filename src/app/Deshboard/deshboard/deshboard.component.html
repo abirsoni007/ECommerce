@@ -1,1 +1,24 @@
-<p>deshboard works!</p>
+<!-- <div *ngFor= 'let ele of hb'>
+    <input type="radio"
+    name="item"
+    value="{{ele.description}}"
+    (ngModel)="selected"
+    (selected)= "onSelectItem($event)">
+    
+    <i>{{ele.description}}</i>
+    </div>
+   <p> {{selected}}</p>
+    <button (click)= "onSelectItem(value)" ></button> -->
+    <div style="text-align:center" *ngFor= 'let ele of hb'>
+        <input type="radio" color="primary"
+                              value={{ele.description}}
+                              (change)="onSelectItem($event)"
+                              #group1>
+                              <i>{{ele.description}}</i>
+              <br />
+              <br />
+           
+            </div>
+<button (clicl)= "onUpdate()">name</button>
+    
+  
