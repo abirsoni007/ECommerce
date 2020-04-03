@@ -5,9 +5,7 @@ import { AuthRoutingModule } from './auth-Routing.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-
-
+    
 
 @NgModule({
     declarations:[
@@ -21,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
         ReactiveFormsModule,
         CommonModule,
         FormsModule,
-        HttpClientModule
+        
       ],
       providers:[
         

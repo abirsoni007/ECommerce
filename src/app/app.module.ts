@@ -1,15 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
 import { SharedModule } from './component/shared/shared.module';
 import { DeshboardModule } from './Deshboard/deshboard/deshboard.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
     
   ],
   imports: [
@@ -17,9 +21,16 @@ import { DeshboardModule } from './Deshboard/deshboard/deshboard.module';
     AppRoutingModule,
     HttpClientModule ,
     SharedModule,
-    DeshboardModule
+   
+    DeshboardModule,
+    BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            timeOut:500,
+            positionClass: 'toast-top-right',
+            preventDuplicates: true
+        })
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+
   providers: [UserService],
   bootstrap: [AppComponent]
 })

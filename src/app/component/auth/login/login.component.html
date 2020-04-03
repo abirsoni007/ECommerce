@@ -12,11 +12,15 @@
                     <label>Password</label>
                     <input type="password" class="form-control" formControlName='password' name="password">
                     <span *ngIf="!login.get('user.password').valid && login.get('user.password').touched">Enter a password</span>
+                    <span  *ngIf="error">{{error}}</span>
+                    <span *ngIf="success">Login</span>
+                    
                 </div>
+                
                 <br>
                 <button class="btn btn-primary" type="submit">Log-In
                 </button>
-
+                
                 <br>
                 <a href="http://localhost:4200/signup"><em>Don't have a account? create account</em></a>
             </div>

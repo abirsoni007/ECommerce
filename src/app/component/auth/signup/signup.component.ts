@@ -4,6 +4,7 @@ import { passwordValidation } from './passwordValidator';
 import { UserService } from 'src/app/service/user.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class SignupComponent implements OnInit {
   signup: FormGroup;
   error: string;
   loading = false;
-  constructor(private userSer: UserService, private router: Router) { }
+  constructor(private userSer: UserService, private router: Router,
+    private toaster: ToastrService) { }
 
   ngOnInit() {
 
@@ -36,10 +38,11 @@ export class SignupComponent implements OnInit {
   onSubmit() {
 console.log(this.signup)
     this.userSer.onSignUp(this.signup.value).pipe(first()).subscribe(data => {
-      console.log(data)
+      this.toaster.success('sigup', 'success')
       this.router.navigate(['login'], { queryParams: { registered: true } });
     },
       error => {
+        this.toaster.error(error)
         this.error = error;
 
       });

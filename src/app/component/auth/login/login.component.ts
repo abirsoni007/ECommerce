@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
-import { FormGroup, FormControl, Validators, NgForm, FormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login',
@@ -11,12 +13,12 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   login: FormGroup;
-
   submitted = false;
-  error: string;
-
+  error:string;
+  success;
   constructor(
-
+    private toster: ToastrService,
+    
     private userService: UserService,
     private router: Router
   ) {
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
   
 
   onSubmit(user) {
+    this.submitted = true;
     console.log(this.login)
 
     if (this.login.invalid) {
@@ -45,13 +48,13 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          this.toster.success('login', 'succrss');
           this.router.navigate(['deshboard']);
         },
         error => {
-          
-          this.error = error;
-          console.log(this.error)
-
+          debugger
+          this.toster.error('login', 'faild')
+  
         });
   }
 }
