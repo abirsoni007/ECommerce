@@ -49,10 +49,15 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.toster.success('login', 'succrss');
+          const res = data
+          this.success=res['data']['response']['token']
+          console.log(this.success)
+
+         localStorage.setItem('token', this.success)
           this.router.navigate(['deshboard']);
         },
         error => {
-          debugger
+          
           this.toster.error('login', 'faild')
   
         });

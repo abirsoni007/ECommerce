@@ -15,18 +15,18 @@ export class DeshboardComponent implements OnInit {
   constructor(private user: UserService) { }
 
   ngOnInit(): void {
-    this.user.onList().pipe(first()).subscribe(data => {
-     
+    this.user.onList().pipe(first()).subscribe((data:any) => {
+      // console.log(data.division[1].id)
       let res = data
 
       this.hb = res['data']['division']
 
-      this.hb.forEach(element => {
-        console.log(element.id);
-        console.log(element.name);
-        console.log(element.description)
+    //   this.hb.forEach(element => {
+    //     console.log(element.id);
+    //     console.log(element.name);
+    //     console.log(element.description)
 
-      });
+    //   });
     });
 
   }

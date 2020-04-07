@@ -13,8 +13,7 @@ export class UserService {
 
 
   constructor(private http: HttpClient) { }
-
-
+Auth;
 
   onSignUp(user) {
     return this.http.post('http://139.59.55.24/api/v1/users/sign_up', user)
@@ -25,6 +24,8 @@ export class UserService {
 
   onLogin(user) {
     return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`, user)
+  
+    
   }
 
   onList(){
@@ -34,6 +35,11 @@ export class UserService {
   })
   }
   onUpdateDivision(user){
-    return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', user)
+    this.Auth=localStorage.getItem('token')
+    console.log(this.Auth)
+    return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', user,
+    {headers:{
+      Auth: localStorage.getItem("token")
+    }})
   }
 }
