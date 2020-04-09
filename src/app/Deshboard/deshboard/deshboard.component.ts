@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { first } from 'rxjs/operators';
 import { JsonPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-deshboard',
@@ -11,7 +12,7 @@ import { JsonPipe } from '@angular/common';
 export class DeshboardComponent implements OnInit {
   hb;
   selected = '';
- constructor(private user: UserService) { }
+ constructor(private user: UserService, private route: Router) { }
 
   ngOnInit(): void {
     this.user.onList().pipe(first()).subscribe((data: any) => {
@@ -32,6 +33,10 @@ export class DeshboardComponent implements OnInit {
 
   }
   onUpdate() {
-    this.user.onUpdateDivision(this.selected).pipe(first()).subscribe(res => { })
+    this.user.onUpdateDivision(this.selected).pipe(first()).subscribe(res => {
+      let rest = res;
+      console.log(rest)
+          this.route.navigate(['categorylist'])
+    })
   }
 }

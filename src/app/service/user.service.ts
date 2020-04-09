@@ -24,28 +24,48 @@ export class UserService {
 
   onLogin(user) {
     return this.http.post(`http://139.59.55.24/api/v1/users/authenticate`, user)
-  
-    
+
+
   }
 
-  onList(){
-    return this.http.get<any[]>('http://139.59.55.24/api/v1/divisions',{
-     })
+  onList() {
+    return this.http.get<any[]>('http://139.59.55.24/api/v1/divisions', {
+    })
   }
+
+
+  onUpdateDivision(user) {
+
+    let Auth = localStorage.getItem('token');
+    console.log(Auth)
+    var header_obj = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + Auth
+    });
+
+
+    const httpOption = {
+      headers: header_obj
+    };
+    return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', { division: user }, httpOption)
+
+  }
+
+  onCategoryList() {
+    let Auth = localStorage.getItem('token');
+    var header_catlist = new HttpHeaders({  
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + Auth
+    });
+
+    const httpCatList = {
+      headers : header_catlist
+    };
+    return this.http.get('http://139.59.55.24/api/v1/categories',
+      httpCatList
+    )
 
  
-  onUpdateDivision(user){
-    
-    let Auth=localStorage.getItem('token');
-    console.log(Auth)
-    var header_obj = new HttpHeaders({'Content-Type': 'application/json',
-    'Authorization': "Bearer "+Auth});
-        
-       
-  const httpOption = {
-    headers: header_obj
-  };
-    return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', user, httpOption)
-    
-  }
+    }
+
 }
