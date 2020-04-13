@@ -1,1 +1,21 @@
-<p>category-list works!</p>
+<div class="">
+    <div class="container">
+
+        <div *ngFor='let data of categorie'>
+<div *ngFor = 'let im of img'>            <table>
+                <tr>
+                    <th><img [src]=im.src width="100px" height="100px" >
+                    
+                    </th>
+
+                </tr>
+                <tr>
+                    <th>{{data.name}}</th>
+
+                </tr>
+            </table>
+        </div>
+
+        </div>
+
+    </div>

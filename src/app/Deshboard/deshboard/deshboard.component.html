@@ -1,24 +1,11 @@
-<!-- <div *ngFor= 'let ele of hb'>
-    <input type="radio"
-    name="item"
-    value="{{ele.description}}"
-    (ngModel)="selected"
-    (selected)= "onSelectItem($event)">
-    
+
+<div style="text-align:center">
+  <div *ngFor='let ele of hb'>
+    <input type="radio" color="primary" value={{ele.name}} (change)="onSelectItem($event)">
     <i>{{ele.description}}</i>
-    </div>
-   <p> {{selected}}</p>
-    <button (click)= "onSelectItem(value)" ></button> -->
-    <div style="text-align:center" *ngFor= 'let ele of hb'>
-        <input type="radio" color="primary"
-                              value={{ele.description}}
-                              (change)="onSelectItem($event)"
-                              #group1>
-                              <i>{{ele.description}}</i>
-              <br />
-              <br />
-           
-            </div>
-<button (click)= "onUpdate()">name</button>
-    
-  
+    <br />
+    <br />
+
+  </div>
+  <button (click)="onUpdate()">OK</button>
+</div>

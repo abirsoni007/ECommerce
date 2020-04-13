@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { UserService } from './service/user.service';
 import { SharedModule } from './component/shared/shared.module';
 import { DeshboardModule } from './Deshboard/deshboard/deshboard.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryListModule } from './component/category-list/category_list.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CategoryListModule } from './component/category-list/category_list.modu
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     HttpClientModule,
     SharedModule,
     CategoryListModule,

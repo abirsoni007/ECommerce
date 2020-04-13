@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { first } from 'rxjs/operators';
-import { JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,8 +18,8 @@ export class DeshboardComponent implements OnInit {
 
       let res = data
 
-      this.hb = res['data']['division']
-
+      this.hb = data.data.division
+console.log(this.hb)
 
     });
 
