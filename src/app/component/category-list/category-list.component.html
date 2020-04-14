@@ -1,21 +1,22 @@
-<div class="">
-    <div class="container">
+<div *ngFor='let data of categorie'>
+    <div class="rows">
+        <div class="coloum">
+            <button type="button" value={{data.name}} (click)=onSelectItem($event)>
+                <table>
+                    <tr>
+                        <th><img *ngIf="data.image == null" [src]=defimage width="100px" height="100px"></th>
+                    </tr>
+                    <tr>
+                        <th><img *ngIf="data.image !== null" [src]='data.image.avatar.url' width="100px" height="100px">
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>{{data.name}}</td>
 
-        <div *ngFor='let data of categorie'>
-<div *ngFor = 'let im of img'>            <table>
-                <tr>
-                    <th><img [src]=im.src width="100px" height="100px" >
-                    
-                    </th>
-
-                </tr>
-                <tr>
-                    <th>{{data.name}}</th>
-
-                </tr>
-            </table>
-        </div>
-
+                    </tr>
+                </table>
+            </button>
         </div>
 
     </div>
+</div>

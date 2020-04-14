@@ -11,27 +11,24 @@ import { first } from 'rxjs/operators';
 export class CategoryListComponent implements OnInit {
   categorie;
   src;
-  img=[]
-  constructor(private userservice: UserService) { }
+  defimage:string ;
+  selecteditem
+  constructor(private userservice: UserService) { 
+    this.defimage='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png' ;
+  }
 
   ngOnInit(): void {
     this.userservice.onCategoryList().pipe(first()).subscribe((data: any) => {
       
             
         this.categorie = data.data.categories
-        console.log(this.categorie)
-         for(var i = 3; i<=6; i++){
-          let src=data.data.categories[i].image.avatar.url
     
-       this.img.push({
-        src
-       })
-    
-       
-    }
-    console.log(this.img)
-         
+        
     })
     
+  }
+  onSelectItem(event){
+this.selecteditem = event.target.value 
+    console.log(this.selecteditem)
   }
 }

@@ -19,7 +19,7 @@ export class DeshboardComponent implements OnInit {
       let res = data
 
       this.hb = data.data.division
-console.log(this.hb)
+      console.log(this.hb)
 
     });
 
