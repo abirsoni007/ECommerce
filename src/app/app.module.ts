@@ -10,11 +10,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryListModule } from './component/category-list/category_list.module';
 import { CommonModule } from '@angular/common';
+import { ProfileComponent } from './component/profile/profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProfileComponent,
     
 
 

@@ -1,22 +1,13 @@
 <div *ngFor='let data of categorie'>
-    <div class="rows">
-        <div class="coloum">
-            <button type="button" value={{data.name}} (click)=onSelectItem($event)>
-                <table>
-                    <tr>
-                        <th><img *ngIf="data.image == null" [src]=defimage width="100px" height="100px"></th>
-                    </tr>
-                    <tr>
-                        <th><img *ngIf="data.image !== null" [src]='data.image.avatar.url' width="100px" height="100px">
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>{{data.name}}</td>
-
-                    </tr>
-                </table>
-            </button>
+    <div class="col-xs-4">
+        <div class="row">
+            <div class="box">
+                <button type="button" value={{data.name}} (click)=onSelectItem($event)>
+                    <img *ngIf="data.image == null" [src]=defimage width="200px" height="200px">
+                    <img *ngIf="data.image !== null" [src]='data.image.avatar.url' width="200px" height="200px">
+                    <p>{{data.name}}</p>
+                </button>
+            </div>
         </div>
-
     </div>
 </div>
