@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -53,19 +54,31 @@ export class UserService {
 
   onCategoryList() {
     let Auth = localStorage.getItem('token');
-    var header_catlist = new HttpHeaders({  
+    var header_catlist = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': "Bearer " + Auth
     });
 
     const httpCatList = {
-      headers : header_catlist
+      headers: header_catlist
     };
     return this.http.get('http://139.59.55.24/api/v1/categories',
       httpCatList
     )
+  }
 
- 
-    }
+  getProgfile() {
+    let Auth = localStorage.getItem('token');
+    var header_profile = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + Auth
+    });
+    const httpProfile = {
+      headers: header_profile
+
+    };
+    return this.http.get('http://139.59.55.24/api/v1/users/account_profile',
+      httpProfile)
+  }
 
 }

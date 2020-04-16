@@ -1,1 +1,15 @@
-<p>profile works!</p>
+<div class="row">
+    <div class="container">
+        <div class="centertextprofile">
+            <!-- <div *ngFor= "let data of userData"> -->
+            <div clas="centerprofile">
+                <img [src]="profilepic" width="200px" height="200px">
+                <p><b>First Name: {{firstname}}</b></p>
+                <p><b>Last Name: {{lastname}}</b></p>
+                <p><b>Email: {{email}}</b></p>
+                <p><b>Ern Number: {{ernnumber}}</b></p>
+                <p><b>Created Date: {{createddate  | date:'mediumDate' }}</b></p>
+            </div>
+        </div>
+    </div>
+</div>
