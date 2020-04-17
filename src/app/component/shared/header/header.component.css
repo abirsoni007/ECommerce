@@ -1,0 +1,31 @@
+.dropdown{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+.buttonMaster
+{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+.ul
+{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #ccc;
+}
+
+.ul li
+{
+display: block;
+padding: 10px;
+text-align: center;
+text-align: center;
+}

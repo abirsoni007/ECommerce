@@ -13,10 +13,15 @@
     
     
     <div class="collapse navbar-collapse">
-<button (click)=onProfile()>profile</button>
-<button (click)= onLogout()>Logout</button>
       <ul class="nav navbar-nav navbar-right">
- 
+ <div class='nav navbar-nav navbar-right'>
+   <button class="buttonMaster">Dropdown</button>
+   <ul class="">
+<li><a href="profile">item1</a></li>
+<li><a href="login">item2</a></li>
+
+   </ul>
+ </div>
         <!-- <li class="dropdown">
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -39,7 +44,7 @@
           <li><a class="nav-link" href="#">Page2</a></li>
         </ul> -->
 
-        <div class="dropdown">
+        <!-- <div class="dropdown">
       <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
@@ -48,7 +53,7 @@
           
    
         </ul>
-      </div>
+      </div> -->
  
       <!-- <select name="demo" id="#">
         <option value="logout">Logout</option>
