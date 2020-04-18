@@ -4,6 +4,7 @@ import { DeshboardComponent } from './Deshboard/deshboard/deshboard.component';
 import { CategoryListComponent } from './component/category-list/category-list.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { SubcategoryComponent } from './component/category-list/subcategory/subcategory.component';
 
 
 
@@ -11,7 +12,8 @@ const routes: Routes = [{path: '', loadChildren: () => import('./component/auth/
 {path:'deshboard' , component: DeshboardComponent},
 {path: 'categorylist', component: CategoryListComponent},
 {path: 'profile', component: ProfileComponent},
-{path: 'edit', component: EdituserComponent}]
+{path: 'edit', component: EdituserComponent},
+{path: 'sub', component:SubcategoryComponent}]
   
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

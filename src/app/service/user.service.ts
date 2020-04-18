@@ -93,4 +93,8 @@ updateProfile(user){
   return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', user , httpupdate)
 
 }
+
+onSubcategory(){
+  return this.http.get('http://139.59.55.24/api/v1/subcategories?category_id=1&promotion_id=1')
+}
 }

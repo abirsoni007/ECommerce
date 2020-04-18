@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './component/profile/profile.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SubcategoryComponent } from './component/category-list/subcategory/subcategory.component';
+import { ProductlistComponent } from './component/category-list/subcategory/productlist/productlist.component';
 
 
 
@@ -21,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     ProfileComponent,
     EdituserComponent,
+    SubcategoryComponent,
+    ProductlistComponent,
     
 
 
