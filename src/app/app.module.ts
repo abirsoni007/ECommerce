@@ -11,12 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryListModule } from './component/category-list/category_list.module';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './component/profile/profile.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
+    EdituserComponent,
     
 
 
@@ -31,7 +35,7 @@ import { ProfileComponent } from './component/profile/profile.component';
     CategoryListModule,
     DeshboardModule,
     BrowserAnimationsModule,
-    
+    ReactiveFormsModule,    
     ToastrModule.forRoot({
       timeOut: 500,
       positionClass: 'toast-top-right',

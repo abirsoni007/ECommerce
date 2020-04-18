@@ -22,6 +22,7 @@ export class CategoryListComponent implements OnInit {
       
             
         this.categorie = data.data.categories
+        console.log(this.categorie)
     
         
     })

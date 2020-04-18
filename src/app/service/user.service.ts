@@ -80,5 +80,17 @@ export class UserService {
     return this.http.get('http://139.59.55.24/api/v1/users/account_profile',
       httpProfile)
   }
+updateProfile(user){
+  let Auth = localStorage.getItem('token');
+  var header_update = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': "Bearer " + Auth
+  });
+  const httpupdate = {
+    headers: header_update
 
+  };
+  return this.http.patch('http://139.59.55.24/api/v1/users/update_profile', user , httpupdate)
+
+}
 }

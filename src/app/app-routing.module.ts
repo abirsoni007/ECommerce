@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { DeshboardComponent } from './Deshboard/deshboard/deshboard.component';
 import { CategoryListComponent } from './component/category-list/category-list.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { EdituserComponent } from './edituser/edituser.component';
 
 
 
 const routes: Routes = [{path: '', loadChildren: () => import('./component/auth/auth.module').then(m=>m.AuthModule)},
 {path:'deshboard' , component: DeshboardComponent},
 {path: 'categorylist', component: CategoryListComponent},
-{path: 'profile', component: ProfileComponent}]
+{path: 'profile', component: ProfileComponent},
+{path: 'edit', component: EdituserComponent}]
   
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

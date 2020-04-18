@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -15,12 +16,14 @@ email;
 profilepic;
 ernnumber;
 createddate;
-  constructor(private userservice: UserService) { }
+id;
+  constructor(private userservice: UserService, private route: Router) { }
 
   ngOnInit(): void {
  
      this.userservice.getProgfile().pipe(first()).subscribe((userprofile: any) => {
        this.userdata = userprofile.data.user
+       this.id = this.userdata.id;
        this.firstname = this.userdata.first_name;
        this.lastname= this.userdata.last_name;
        this.email = this.userdata.email;
@@ -30,6 +33,9 @@ createddate;
      
         })
 
+}
+editButtonClick(){
+this.route.navigate(['edit'])
 }
 
 }
