@@ -35,6 +35,6 @@ this.selecteditem = event.target.value
   }
 
   sub(){
-    this.route.navigate(['sub'])
+    this.route.navigate(['subcategory'])
   }
 }

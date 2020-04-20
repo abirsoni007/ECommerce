@@ -97,4 +97,18 @@ updateProfile(user){
 onSubcategory(){
   return this.http.get('http://139.59.55.24/api/v1/subcategories?category_id=1&promotion_id=1')
 }
+
+itemMasterListing(){
+  let Auth = localStorage.getItem('token');
+  var header_list = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': "Bearer " + Auth
+   
+  });
+  const httpitemmaster = {
+    headers: header_list
+
+  };
+  return this.http.get('http://139.59.55.24/api/v1/item_masters?subcategory_id=1&brand_id[]=1&min_price=5&max_price=50&sort_by=asc&page=1&per=5' , httpitemmaster)
+}
 }
