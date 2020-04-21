@@ -109,6 +109,20 @@ itemMasterListing(){
     headers: header_list
 
   };
-  return this.http.get('http://139.59.55.24/api/v1/item_masters?subcategory_id=1&brand_id[]=1&min_price=5&max_price=50&sort_by=asc&page=1&per=5' , httpitemmaster)
+  return this.http.get('http://139.59.55.24/api/v1/item_masters?subcategory_id=7&brand_id[]=3&category_id[]=11&min_price=10&max_price=50&sort_by=desc' , httpitemmaster)
 }
-}
+
+
+itemMasteDetails(){
+  let Auth = localStorage.getItem('token');
+  var header_list = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': "Bearer " + Auth
+   
+  });
+  const httpdetails = {
+    headers: header_list
+  };
+  return this.http.get('http://139.59.55.24/api/v1/item_masters?subcategory_id=1', 
+  httpdetails)
+}}

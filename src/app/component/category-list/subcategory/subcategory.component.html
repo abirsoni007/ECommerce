@@ -4,10 +4,10 @@
             <div class="box">
                     <img *ngIf="data.image == null" [src]=defimage width="200px" height="200px">
                    <a><img *ngIf="data.image !== null" [src]='data.image.avatar_url' width="200px" height="200px"></a>
-                    <button  value={{data.id}}   width="200px">{{data.name}}</button>
+                 
             </div>
+            <button  value={{data.id}}   width="200px">{{data.name}}</button>
         </div>
     </div>
     
 </div>
-<button (click)= "productlist()"></button>

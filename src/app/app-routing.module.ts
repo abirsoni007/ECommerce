@@ -6,6 +6,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { SubcategoryComponent } from './component/category-list/subcategory/subcategory.component';
 import { ProductlistComponent } from './component/category-list/subcategory/productlist/productlist.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [{path: '', loadChildren: () => import('./component/auth/
 {path: 'profile', component: ProfileComponent},
 {path: 'edit', component: EdituserComponent},
 {path: 'subcategory', component:SubcategoryComponent},
-{path: 'productlist', component:ProductlistComponent}]
+{path: 'productlist', component:ProductlistComponent},
+{path: 'itemmaster', component: ProductdetailsComponent}]
   
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

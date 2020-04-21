@@ -15,6 +15,8 @@ import { EdituserComponent } from './edituser/edituser.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SubcategoryComponent } from './component/category-list/subcategory/subcategory.component';
 import { ProductlistComponent } from './component/category-list/subcategory/productlist/productlist.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 
@@ -25,6 +27,7 @@ import { ProductlistComponent } from './component/category-list/subcategory/prod
     EdituserComponent,
     SubcategoryComponent,
     ProductlistComponent,
+    ProductdetailsComponent,
     
 
 
@@ -39,7 +42,8 @@ import { ProductlistComponent } from './component/category-list/subcategory/prod
     CategoryListModule,
     DeshboardModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,    
+    ReactiveFormsModule, 
+    BsDropdownModule,   
     ToastrModule.forRoot({
       timeOut: 500,
       positionClass: 'toast-top-right',
